@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Movie Insights Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🎬 Movie Insights <span class="badge">AI PRO</span></h1>
+            <p>Deep Learning Sentiment Analysis Dashboard</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="movieInput" placeholder="Enter movie title (e.g. Inception)">
+                <button id="analyzeBtn" onclick="analyzeReviews()">Search & Analyze</button>
+            </div>
+        </div>
+
+        <div id="loading" class="hidden">Analyzing reviews with sentiment models...</div>
+
+        <main id="dashboard" class="hidden">
+            <div class="movie-header">
+                <img id="moviePoster" class="hidden" src="" alt="Movie Poster">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Reviews</h3>
+                        <p id="totalReviews">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Overall Sentiment</h3>
+                        <p id="avgConfidence">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>AI Summary</h3>
+                        <p id="overallVerdict">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <canvas id="sentimentChart"></canvas>
+            </div>
+
+            <div class="reviews-list">
+                <h3>Detailed AI Breakdown</h3>
+                <div id="reviewsContainer"></div>
+            </div>
+        </main>
+
+        <footer
+            style="text-align: center; padding: 20px; color: #888; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px;">
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bd747f62dd271661f855776e3d48914.svg"
+                alt="TMDB Logo" width="50" style="margin-bottom: 10px; display: inline-block;">
+            <p style="font-size: 0.8em;">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+            <p style="font-size: 0.8em;">Data provided by <a href="https://www.themoviedb.org" target="_blank"
+                    style="color: #00d2ff; text-decoration: none;">The Movie Database</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
